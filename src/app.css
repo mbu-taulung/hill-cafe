@@ -1,25 +1,65 @@
 #app {
-  max-width: 1280px;
+  max-width: 535px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.preact:hover {
-  filter: drop-shadow(0 0 2em #673ab8aa);
+body {
+  line-height: 1.6;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  background-color: #f7f7fb;
+  margin: 0;
 }
 
-.card {
-  padding: 2em;
+h4,
+h2,
+h1,
+p {
+  margin: 0;
 }
 
-.read-the-docs {
-  color: #888;
+.menuTitle {
+  margin-bottom: .7em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.menuItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menuList1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.menuList2 {
+  display: grid;
+  grid-template-columns: 2.4fr 1fr 1fr 1fr;
+}
+
+.menuList p {
+  text-align: left;
+}
+
+.menuList h4 {
+  text-align: right;
+}
+
+img {
+  object-fit: cover;
+  max-width: 100%;
+}
+
+main {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.extra-menu {
+  margin-top: 2.5em;
+  margin-bottom: 2em;
 }

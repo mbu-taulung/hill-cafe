@@ -1,32 +1,76 @@
-import { useState } from 'preact/hooks'
-import preactLogo from './assets/preact.svg'
+import logo from './logo.svg'
+import logoFooter from "./logo-footer.svg"
 import './app.css'
+import { data, momoData, liquorData } from "../src/data/menu"
 
 export function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://preactjs.com" target="_blank">
-          <img src={preactLogo} class="logo preact" alt="Preact logo" />
-        </a>
-      </div>
-      <h1>Vite + Preact</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/app.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p class="read-the-docs">
-        Click on the Vite and Preact logos to learn more
-      </p>
+      <header>
+        <div>
+          <img src={logo} />
+        </div>
+        <div>
+          <h2>MBU Hill Cafe & Restro</h2>
+          <h1>Menu</h1>
+        </div>
+      </header>
+      <main>
+        <div>
+          {data.map((course) => {
+            return <div className='menu-container'>
+              <h3 className='menuTitle'>{course.title}</h3>
+              {course.menus.map((item) => {
+                return <div className='menuItem'>
+                  <p>{item.name}</p>
+                  <h4>{item.price}</h4>
+                </div>
+              })}
+            </div>
+          })}
+        </div>
+        <div>
+          <h3 className='menuTitle'>Momo</h3>
+          <div className='menuList menuList1'>
+            <p></p>
+            <h4>Steam</h4>
+            <h4>Fry</h4>
+            <h4>C</h4>
+          </div>
+          {momoData.map((item) => {
+            return <div className='menuList menuList1'>
+              <p>{item.name}</p>
+              <h4>{item.priceA}</h4>
+              <h4>{item.priceB}</h4>
+              <h4>{item.priceC}</h4>
+            </div>
+          })}
+        </div>
+        <div className='extra-menu'>
+          <h3 className='menuTitle'>Domestic Liquor</h3>
+          <div className='menuList menuList2'>
+            <p></p>
+            <h4>Qtr</h4>
+            <h4>Half</h4>
+            <h4>Full</h4>
+          </div>
+          {liquorData.map((item) => {
+            return <div className='menuList menuList2'>
+              <p>{item.name}</p>
+              <h4>{item.priceA}</h4>
+              <h4 className='price-mid'>{item.priceB}</h4>
+              <h4>{item.priceC}</h4>
+            </div>
+          })}
+        </div>
+      </main>
+      <footer>
+        <div className='footer-logo'>
+          <img src={logoFooter} />
+        </div>
+        <h4>Budhanilkantha-01, Taulung Chautara</h4>
+        <h4><span>Contact: </span> 9860975965 / 9818398241</h4>
+      </footer>
     </>
   )
 }
